@@ -21,9 +21,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run tests
-        run: |
-          export PYTHONPATH=$PYTHONPATH:.
-          pytest
+        run: pytest
 
       - name: Build executable
         run: pyinstaller --onefile app.py
@@ -32,4 +30,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: python-crud-executable
-          path: dist/app
+          path: dist/app.exe
