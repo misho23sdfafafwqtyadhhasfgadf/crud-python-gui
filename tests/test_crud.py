@@ -1,4 +1,12 @@
+import sys
+import os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 import crud
+
+def setup_function():
+    crud.data.clear()
 
 def test_create_and_read():
     crud.create("item1")
